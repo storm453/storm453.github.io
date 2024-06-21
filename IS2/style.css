@@ -1,5 +1,10 @@
 body {
+    padding: 25px;
     color: #cbdbfc;
     font-family: 'Verdana', sans-serif; 
     background-color: #222034;
+}
+
+a {
+  color: #5fcde4;
 }
