@@ -114,12 +114,33 @@ class CraftingRecipe extends HTMLElement
                 let line = [];
                 for(let x = 0; x < 3; x++)
                 {
+                    var exists = false;
+                    var block = false;
+
+                    if(this.pattern[y][x] != undefined)
+                    {
+                        exists = true;
+
+                        if(this.pattern[y][x].icon.src.includes("block"))
+                        {
+                            block = true;
+                        }
+                    }
+
                     let slot = document.createElement("div");
                     slot.style.position = "absolute"
-                    slot.style.top = (16*(1+y))+"px";
-                    slot.style.left = (16*(1+x))+"px";
+                    slot.style.top = ((22)+ (y*18))+"px";
+                    slot.style.left = ((20)+(x*18))+"px";
+
+                    if(block)
+                    {
+                        this.pattern[y][x].icon.width = 16;
+                        this.pattern[y][x].icon.height = 16;
+                    }
+
                     line.push(slot);
-                    if(this.pattern[y][x] != undefined)
+
+                    if(exists)
                     {
                         slot.appendChild(this.pattern[y][x].icon.cloneNode());
                     }
@@ -128,12 +149,36 @@ class CraftingRecipe extends HTMLElement
                 this.grid.push(line);
             }
 
+            var exists = false;
+            var block = false;
+
+            if(this.result != undefined)
+            {
+                exists = true;
+                
+                if(this.result.icon.src.includes("block"))
+                {
+                    block = true;
+                }
+            }
+
             let slot = document.createElement("div");
+            
             slot.style.position = "absolute";
-            slot.style.top = 32+"px";
-            slot.style.left = 96+"px";
-            slot.appendChild(this.result.icon);
-            container.appendChild(slot);
+            slot.style.top = 40+"px";
+            slot.style.left = 98+"px";
+
+            if(block)
+            {
+                this.result.icon.width = 16;
+                this.result.icon.height = 16;
+            }
+
+            if(exists)
+            {
+                slot.appendChild(this.result.icon);
+                container.appendChild(slot);
+            }
         });
     }
     

@@ -19,3 +19,13 @@ a {
 .e {
     font-size: 16px;
 }
+
+.credits
+{
+  color: #6abe30;
+}
+
+.center {
+  max-width: 800px;
+  margin: auto;
+}

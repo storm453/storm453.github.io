@@ -9,33 +9,127 @@
 
     <body>
         <a href = "index.html">Back to home</a>
-        <h2>Recipe Book</h2>
 
-        <h4>Test Recipe</h4>
-        
-        <crafting-recipe class="recipe-scale">
-            <ingredient char="p">pebble</ingredient>
-            <ingredient char="k">kindling</ingredient>
-            <ingredient char="s">stick</ingredient>
-            <pattern>
-                *s*
-                sks
-                ppp
-            </pattern>
-            <result quantity=1>campfire</ingredient>
-        </crafting-recipe>
+        <div class="center">
+            <h2>Recipe Book</h2> <br>
+
+            <h3>Barrel</h3>
+            <crafting-recipe class="recipe-scale">
+                <ingredient char="w">slats</ingredient>
+                <ingredient char="m">metal-fragments</ingredient>
+                <ingredient char="s">stick</ingredient>
+                <pattern>
+                    sws
+                    wmw
+                    sws
+                </pattern>
+                <result quantity=1>barrel</ingredient>
+            </crafting-recipe>
+
+            <h3>Basin</h3>
+            <crafting-recipe class="recipe-scale">
+                <ingredient char="s">stick</ingredient>
+                <ingredient char="m">metal</ingredient>
+                <ingredient char="g">bottle</ingredient>
+                <pattern>
+                    s*s
+                    g*g
+                    mgm
+                </pattern>
+                <result quantity=1>cauldron</ingredient>
+            </crafting-recipe>
+
+            <h3>Beancan</h3>
+            <crafting-recipe class="recipe-scale">
+                <ingredient char="f">fuse</ingredient>
+                <ingredient char="m">metal-fragments</ingredient>
+                <ingredient char="g">gunpowder</ingredient>
+                <pattern>
+                    *f*
+                    mgm
+                    mgm
+                </pattern>
+                <result quantity=2>beancan</ingredient>
+            </crafting-recipe>
+
+            <h3>Bed</h3>
+            <crafting-recipe class="recipe-scale">
+                <ingredient char="c">cloth</ingredient>
+                <ingredient char="w">slats</ingredient>
+                <ingredient char="s">stick</ingredient>
+                <pattern>
+                    ccc
+                    www
+                    s*s
+                </pattern>
+                <result quantity=1>bed</ingredient>
+            </crafting-recipe>
+
+            <h3>Blast Furnace</h3>
+            <crafting-recipe class="recipe-scale">
+                <ingredient char="m">metal</ingredient>
+                <ingredient char="c">charcoal</ingredient>
+                <ingredient char="b">brick</ingredient>
+                <pattern>
+                    bcb
+                    mcm
+                    bcb
+                </pattern>
+                <result quantity=1>blast</ingredient>
+            </crafting-recipe>
+
+            <h3>Brick Block</h3>
+            <crafting-recipe class="recipe-scale">
+                <ingredient char="m">mortar</ingredient>
+                <ingredient char="b">brick</ingredient>
+                <pattern>
+                    ***
+                    mb*
+                    bm*
+                </pattern>
+                <result quantity=1>bricks</ingredient>
+            </crafting-recipe>
+
+            <h3>Bucket</h3>
+            <crafting-recipe class="recipe-scale">
+                <ingredient char="f">fiber</ingredient>
+                <ingredient char="m">metal</ingredient>
+                <ingredient char="w">slats</ingredient>
+                <pattern>
+                    fff
+                    wmw
+                    *w*
+                </pattern>
+                <result quantity=1>bucket</ingredient>
+            </crafting-recipe>
+
+            <h3>Campfire</h3>
+            <crafting-recipe class="recipe-scale">
+                <ingredient char="k">kindling</ingredient>
+                <ingredient char="s">stick</ingredient>
+                <ingredient char="p">pebble</ingredient>
+                <pattern>
+                    *s*
+                    sks
+                    ppp
+                </pattern>
+                <result quantity=1>campfire</ingredient>
+            </crafting-recipe>
+
+            <h3>Casting Basin</h3>
+            <crafting-recipe class="recipe-scale">
+                <ingredient char="c">charcoal</ingredient>
+                <ingredient char="m">metal</ingredient>
+                <pattern>
+                    mcm
+                    mmm
+                    mmm
+                </pattern>
+                <result quantity=1>cast</ingredient>
+            </crafting-recipe>
+        </div>
 
         <p>
-            Barrel
-            Basin
-            Beancan
-            Bed
-            Blast Furnace
-            Brick Block
-            Bucket <br>
-            Campfire
-            Cast
-            Charcoal Filters
             Charcoal Powder
             Clay Block
             Clinker
