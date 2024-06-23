@@ -1,0 +1,68 @@
+All Recipes
+
+Barrel
+Basin
+Beancan
+Bed
+Blast Furnace
+Brick Block
+Bucket
+Campfire
+Cast
+Charcoal Filters
+Charcoal Powder
+Clay Block
+Clinker
+Cloth
+Club
+Cobblestone
+Coconut Fragments
+Coconut Water
+Coffee
+Coffee Beans
+Composter
+Concrete Powder
+Dough
+Dynamite
+Farmland
+Fire Starter
+Flax Fiber
+Flour
+Fuse
+Glass Bottle
+Grindstone
+Hay
+Hopper
+Kindling
+Ladder
+Lantern
+Linseed Oil
+Melon Seeds
+Melon Slice
+Metal
+Metal Fragments (Salvage)
+Metal Fragments (Smelted)
+Metal Salvage
+Mortar
+Mortar brick
+Paper
+Paper
+Plant Fiber
+Raft
+Raw Pickaxe
+Reinforced Concrete Powder
+Sand
+Sandstone
+Sawdust
+Shirt
+Sign
+Sledgehammer
+Smoker
+Stone Hatchet
+Stone Pickaxe
+Straw Kindling
+Tapered Stone
+Trap Block
+Wood Slats
+Wood Trapdoor
+Workbench
