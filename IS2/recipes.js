@@ -26,11 +26,11 @@ class Item extends HTMLElement
 }
 customElements.define("mc-item",Item);
 
-function addItem(name,icon_path)
+function addItem(name,icon_path,link=true)
 {
     let icon = document.createElement("img");
     icon.src=icon_path;
-    items[name] = {icon:icon};
+    items[name] = {icon:icon, name:name, link:link};
 }
 
 class CraftingRecipe extends HTMLElement
@@ -110,75 +110,81 @@ class CraftingRecipe extends HTMLElement
             console.log(this.pattern )
             this.grid = [];
             for(let y = 0; y < 3; y++)
-            {
-                let line = [];
-                for(let x = 0; x < 3; x++)
                 {
-                    var exists = false;
-                    var block = false;
-
-                    if(this.pattern[y][x] != undefined)
+                    let line = [];
+                    for(let x = 0; x < 3; x++)
                     {
-                        exists = true;
-
-                        if(this.pattern[y][x].icon.src.includes("block"))
+                        var exists = false;
+                        var block = false;
+    
+                        if(this.pattern[y][x] != undefined)
                         {
-                            block = true;
+                            exists = true;
+    
+                            if(this.pattern[y][x].icon.src.includes("block"))
+                            {
+                                block = true;
+                            }
                         }
+    
+                        let slot = document.createElement("div");
+                        slot.style.position = "absolute"
+                        slot.style.top = ((22)+ (y*18))+"px";
+                        slot.style.left = ((20)+(x*18))+"px";
+    
+                        if(block)
+                        {
+                            this.pattern[y][x].icon.width = 16;
+                            this.pattern[y][x].icon.height = 16;
+                        }
+    
+                        line.push(slot);
+    
+                        if(exists)
+                        {
+                            let link = document.createElement("a");
+                            if(this.pattern[y][x].link == true) link.href = this.pattern[y][x].name+".html";
+                            link.appendChild(this.pattern[y][x].icon.cloneNode());
+                            slot.appendChild(link);
+                        }
+                        container.appendChild(slot);
                     }
-
-                    let slot = document.createElement("div");
-                    slot.style.position = "absolute"
-                    slot.style.top = ((22)+ (y*18))+"px";
-                    slot.style.left = ((20)+(x*18))+"px";
-
-                    if(block)
-                    {
-                        this.pattern[y][x].icon.width = 16;
-                        this.pattern[y][x].icon.height = 16;
-                    }
-
-                    line.push(slot);
-
-                    if(exists)
-                    {
-                        slot.appendChild(this.pattern[y][x].icon.cloneNode());
-                    }
-                    container.appendChild(slot);
+                    this.grid.push(line);
                 }
-                this.grid.push(line);
-            }
-
-            var exists = false;
-            var block = false;
-
-            if(this.result != undefined)
-            {
-                exists = true;
-                
-                if(this.result.icon.src.includes("block"))
+    
+                var exists = false;
+                var block = false;
+    
+                if(this.result != undefined)
                 {
-                    block = true;
+                    exists = true;
+                    
+                    if(this.result.icon.src.includes("block"))
+                    {
+                        block = true;
+                    }
                 }
-            }
-
-            let slot = document.createElement("div");
-            
-            slot.style.position = "absolute";
-            slot.style.top = 40+"px";
-            slot.style.left = 98+"px";
-
-            if(block)
-            {
-                this.result.icon.width = 16;
-                this.result.icon.height = 16;
-            }
-
-            if(exists)
-            {
-                slot.appendChild(this.result.icon);
+    
+                let slot = document.createElement("div");
+                
+                slot.style.position = "absolute";
+                slot.style.top = 40+"px";
+                slot.style.left = 98+"px";
+    
+                if(block)
+                {
+                    this.result.icon.width = 16;
+                    this.result.icon.height = 16;
+                }
+    
+                if(exists)
+                {
+                    let link = document.createElement("a");
+                    if(this.result.link == true) link.href = this.result.name+".html";
+                    link.appendChild(this.result.icon.cloneNode());
+                    slot.appendChild(link);
+                }
                 container.appendChild(slot);
-            }
         });
     }
     
